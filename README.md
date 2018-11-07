@@ -20,8 +20,10 @@ iOS at the moment. The data can be used to further research on the best watering
 
 <h1>Installation</h1>
 
-NPM and Bower are needed. Bower is deprecated and it is recommended that no one should be using it anymore, and the
+NodeJS, NPM, MongoDB, and Bower are needed for the server. Bower is deprecated and it is recommended that no one should be using it anymore, and the
 project will stop using bower and migrate to Yarn in the future.
+
+NodeJS can be downloaded from <a href="https://nodejs.org/en/download/">here</a>.
 
 Install NPM with:
 
@@ -42,4 +44,9 @@ Install all Bower dependencies:
 Once all dependencies have been installed, navigate to the app folder and run the server with:
 
 <pre><code>node server.js</code></pre>
+</p>
+
+Installing MongoDB:
+<p>
+Instructions for installing and running MongoDB can be found at this <a href="https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-windows/">link</a>.
 </p>
