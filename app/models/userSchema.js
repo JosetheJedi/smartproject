@@ -14,6 +14,11 @@ let mongoose = require('mongoose');
 
 let bcrypt = require('bcrypt-nodejs');
 
+let Devices = {
+    name: String,
+    token: String
+}
+
 let Logs = {
     created_at: {
         date: Date,
@@ -60,9 +65,10 @@ let userSchema = mongoose.Schema({
     local: {
         email: String,
         password: String,
-        token: String
+        token: String,
     },
-    gardens: [Gardens]
+    gardens: [Gardens],
+    devices: [Devices]
 });
 
 
