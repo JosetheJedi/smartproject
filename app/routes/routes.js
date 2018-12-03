@@ -110,6 +110,9 @@ app.post('/profile', isLoggedIn, function (req, res) {
         // get the name of the garden from the headers and trim any extra white space
         var nameG = req.body.gardenName.trim();
 
+        var username = req.user.local.email;
+        username = username.substring(0, username.indexOf('@'));
+
         // concatenating the new garden name into the array of gardens.
         uSchema.gardens = uSchema.gardens.concat({ name: nameG });
 
@@ -130,6 +133,7 @@ app.post('/profile', isLoggedIn, function (req, res) {
                 // gardens, and message so that we can work with them in ejs.
                 res.render('profile.ejs', {
                     user: req.user.local.email,
+                    name: username,
                     gardens: uSchema.gardens,
                     message: req.flash('duplicatedMessage')
                 });
