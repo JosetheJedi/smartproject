@@ -57,7 +57,8 @@
                                             <input type="hidden" value="<%=plantID %>" name="plantID">
                                             <label>Start Times</label><br>
                                             <div class='input-group date'>
-                                                <input type='text' class="form-control" id='datetimepicker1' name="startT" required />
+                                                <input type='text' class="form-control" id='datetimepicker1' name="startT"
+                                                    required />
                                             </div><br>
                                             <label>Repeat?</label>
                                             <input type="checkbox" id="moreTimes" onclick="repeat()">
@@ -142,8 +143,31 @@
                         <% if (logs.length > 0) { %>
                         <% logs.forEach(function( log) { %>
                         <li class="list-group-item">
-                            <b>Date: </b>
-                            <%= log.created_at.date %>
+                            <ul>
+                                <li><b>Date: </b>
+                                    <%= new Date(log.created_at.date).toLocaleString('en-US') %>
+                                    <%= new Date(log.created_at.date).getMonth() %>/<%= new Date(log.created_at.date).getDay() %>/<%= new Date(log.created_at.date).getFullYear() %>
+                                </li>
+                                <li>
+                                    <b>
+                                        Temperature:
+                                    </b>
+                                        <%= log.temperature %>
+                                </li>
+                                <li>
+                                    <b>
+                                        Humidity:
+                                        
+                                    </b>
+                                        <%= log.humidity %>%
+                                </li>
+                                <li>
+                                    <b>
+                                        Soil Moisture:
+                                    </b>
+                                        <%= log.moisture %>%
+                                </li>
+                            </ul>
                         </li>
                         <% }) %>
                         <% } else { %>
