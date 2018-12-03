@@ -248,7 +248,7 @@ apiRoutes.route('/logs')
                             plantR.logs = plantR.logs.concat({
                                 created_at: {
                                     date: calcDate,
-                                    time: lDateCreated.time,
+                                    time: calcDate.getTime(),
                                     offset: lDateCreated.offset
                                 },
                                 waterUsed: lWater_Used,
@@ -283,16 +283,10 @@ module.exports = apiRoutes;
 
 
 function createJSONDate(dateIn) {
-    var milliseconds = parseInt((dateIn.time % 1000) / 100)
-        , seconds = parseInt((dateIn.time / 1000) % 60)
-        , minutes = parseInt((dateIn.time / (1000 * 60)) % 60)
-        , hours = parseInt((dateIn.time / (1000 * 60 * 60)) % 24);
 
-    hours = (hours < 10) ? "0" + hours : hours;
-    minutes = (minutes < 10) ? "0" + minutes : minutes;
-    seconds = (seconds < 10) ? "0" + seconds : seconds;
+    var num = parseInt(dateIn.time);
 
-    var dateString = dateIn.date + "T" + hours + ":" + minutes + ":" + seconds + "Z";
+    var date = new Date(num);
 
-    return new Date(dateString);
+    return date;
 }
