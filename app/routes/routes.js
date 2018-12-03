@@ -85,10 +85,15 @@ app.get('/profile', isLoggedIn, function (req, res) {
     // finding the document that belongs to the user.
     userSchema.findOne({ 'local.email': req.user.local.email }, function (err, uSchema) {
 
+        var username = req.user.local.email;
+        username = username.substring(0, username.indexOf('@'));
+
+        console.log(username);
         // this will render the profile page and it will set the values for user
         // gardens, and message so that we can work with them in ejs.
         res.render('profile.ejs', {
             user: req.user.local.email,
+            name: username,
             gardens: uSchema.gardens,
             message: req.flash('duplicatedMessage')
         });
@@ -257,13 +262,15 @@ app.post('/garden', isLoggedIn, function (req, res) {
                     console.log(err);
                 }
                 else {
-                    res.render('garden.ejs', {
-                        user: req.user.local.email,
-                        gardenID: gardenID,
-                        garden: resG,
-                        plants: resG.plants,
-                        message: req.flash('duplicatedMessage')
-                    });
+                    // res.render('garden.ejs', {
+                    //     user: req.user.local.email,
+                    //     gardenID: gardenID,
+                    //     garden: resG,
+                    //     plants: resG.plants,
+                    //     message: req.flash('duplicatedMessage')
+                    // });
+
+                    res.redirect('back');
                 }
             });
         }
@@ -480,17 +487,19 @@ app.post('/settings', isLoggedIn, function (req, res) {
                         console.log(err);
                     }
                     else {
-                        // render the garden page
-                        res.render('settings.ejs', {
-                            user: req.user.local.email,
-                            gardenID: gardenID,
-                            garden: resG,
-                            plantID: plantO,
-                            plant: plantR,
-                            logs: plantR.logs,
-                            schedules: plantR.waterSchedules,
-                            message: req.flash('duplicatedMessage')
-                        });
+                        // // render the garden page
+                        // res.render('settings.ejs', {
+                        //     user: req.user.local.email,
+                        //     gardenID: gardenID,
+                        //     garden: resG,
+                        //     plantID: plantO,
+                        //     plant: plantR,
+                        //     logs: plantR.logs,
+                        //     schedules: plantR.waterSchedules,
+                        //     message: req.flash('duplicatedMessage')
+                        // });
+
+                        res.redirect('back');
                     }
                 });
 
