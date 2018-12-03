@@ -4,6 +4,7 @@ var socket = io('/settings');
 // time input box so the user can say when the other watering will take place.
 function repeat() {
     if (document.getElementById("moreTimes").checked) {
+        document.getElementById("secondTime").innerText = "Second Start Time: ";
         var nDiv = document.createElement("DIV");
         var nInput = document.createElement("INPUT");
         var breakE = document.createElement("BR");
@@ -18,9 +19,10 @@ function repeat() {
 
         nInput.appendChild(breakE);
         nDiv.appendChild(nInput);
-        document.getElementById("moreChecks").appendChild(nDiv);
+        document.getElementById("moreChecks").append(nDiv);
     }
     else {
+        document.getElementById("secondTime").innerText = "";
         var node = document.getElementById("moreChecks");
 
         while (node.firstChild) {

@@ -60,17 +60,23 @@
                                                 <input type='text' class="form-control" id='datetimepicker1' name="startT"
                                                     required />
                                             </div><br>
-                                            <label>Repeat?</label>
-                                            <input type="checkbox" id="moreTimes" onclick="repeat()">
-                                            <br>
-
-                                            <div id="moreChecks">
-                                            </div>
-                                            <br>
 
                                             <label>Duration</label>
                                             <input type="number" name="Duration" min="1" max="60" required> <i>minutes</i>
                                             </input>
+
+
+                                            <label>Check if you want to repeat the watering at a different time during the day: </label>
+                                            <input type="checkbox" id="moreTimes" onclick="repeat()">
+                                            <br>
+
+                                            <label id="secondTime"></label>
+                                            <br>
+                                            <div id="moreChecks">
+                                            </div>
+                                            <br>
+
+                                            
                                         </div>
                                         <button type="submit" class="btn btn-default">Create</button>
                                     </form>
