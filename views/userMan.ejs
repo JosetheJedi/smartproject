@@ -4,16 +4,16 @@
 
 <head>
     <% include ./partials/header %>
-        <title>Resilient Smart Garden</title>
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-        <!-- load bootstrap css -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-        <!-- load fontawesome -->
-        <style>
-            body {
-                padding-top: 80px;
-            }
-        </style>
+    <title>Resilient Smart Garden</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- load fontawesome -->
+    <style>
+        body {
+            padding-top: 80px;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,28 +23,39 @@
                 Abstract
             </h1>
             <p>
-                Our embedded system is a resilient smart garden capable of self watering and assisted remote monitoring. Here in California
-                we’re in the midst of a drought; which becomes a problem when we have so much farming. Every drop of water
-                is precious and the farming process could use some help with optimizing its water use. Too much watering
-                is just wasting this limited resource and underwatering kills plants or renders them unable to produce maximum
+                Our embedded system is a resilient smart garden capable of self watering and assisted remote
+                monitoring. Here in California
+                we’re in the midst of a drought; which becomes a problem when we have so much farming. Every drop of
+                water
+                is precious and the farming process could use some help with optimizing its water use. Too much
+                watering
+                is just wasting this limited resource and underwatering kills plants or renders them unable to produce
+                maximum
                 crop production.
             </p>
-            <p>Our Resilient Smart Garden will help to ensure vegetable plants are not over or under watered. It will find the
-                water balance to grow the perfect vegetable. It also takes the mandatory watering out of the users hands
+            <p>Our Resilient Smart Garden will help to ensure vegetable plants are not over or under watered. It will
+                find the
+                water balance to grow the perfect vegetable. It also takes the mandatory watering out of the users
+                hands
                 and automates watering based on the moisture of the soil.
             </p>
             <p>
-                The Smart Garden will take moisture and temperature readings to decide if the garden needs more water. These readings will
-                be stored in a database that is accessible online and can be accessed through pc or mobile smartphone. The
-                data can be used to further research on the best watering method that fits for different kinds of plants.
+                The Smart Garden will take moisture and temperature readings to decide if the garden needs more water.
+                These readings will
+                be stored in a database that is accessible online and can be accessed through pc or mobile smartphone.
+                The
+                data can be used to further research on the best watering method that fits for different kinds of
+                plants.
 
             </p>
             <h1>
                 Hardware
             </h1>
             <p>
-                The Arduino Board functions as the brain of the whole system. Using the WiFi Shield the Arduino Board can communicate with
-                the online server to record a user’s garden as well as to control the other components connected to the Arduino.
+                The Arduino Board functions as the brain of the whole system. Using the WiFi Shield the Arduino Board
+                can communicate with
+                the online server to record a user’s garden as well as to control the other components connected to the
+                Arduino.
             </p>
             <p>
                 A few of the important components the Arduino Board is connected to are:
@@ -59,97 +70,136 @@
                         Water solenoid valve
                     </li>
                 </ul>
-                Both the temperature sensor and soil moisture sensor, allows users to record the reading, so that they may be displayed later.
-                The water solenoid valve functions properly when connected to an outdoor water faucet and a 12v power supply.
+                Both the temperature sensor and soil moisture sensor, allows users to record the reading, so that they
+                may be displayed later.
+                The water solenoid valve functions properly when connected to an outdoor water faucet and a 12v power
+                supply.
             </p>
-            <h1>
-                How to setup the Hardware
-            </h1>
-            <p>
-                To install the WiFi shield you must first solder on headers so that it stacks on top of the Arduino Board.
-            </p>
-            <ul>
-                <li>
-                    <a href="https://learn.sparkfun.com/tutorials/how-to-solder-through-hole-soldering ">Soldering Tutorial</a>
-                </li>
-                <li>
-                    <a href="https://learn.sparkfun.com/tutorials/esp8266-wifi-shield-hookup-guide?_ga=2.170306016.1344413419.1524463999-1934314947.1522828161">Hook-Up Guide</a>
-                </li>
-            </ul>
-            <p>
-                To connect the LCD screen:
-            </p>
-            <ul>
-                <li>
-                    <a href="http://www.circuitbasics.com/how-to-set-up-an-lcd-display-on-an-arduino/">Tutorial</a>
-                </li>
-                <li>
-                    <p>Schematic:</p>
-                    <img src="Arduino-LCD-Schematic.png" alt="lcd_schematics">
-                </li>
-            </ul>
-            <p>
-                To connect the temperature and humidity sensor
-            </p>
-            <ul>
-                <li>
-                    <a href="http://www.circuitbasics.com/how-to-set-up-the-dht11-humidity-sensor-on-an-arduino/
-                    ">Tutorial</a>
-                </li>
-                <li>
+            <div id="hardware_setup">
+                <h1>
+                    How to setup the Hardware
+                </h1>
+                <p>
+                    To install the WiFi shield you must first solder on headers so that it stacks on top of the Arduino
+                    Board.
+                </p>
+                <ul>
+                    <li>
+                        <a href="https://learn.sparkfun.com/tutorials/how-to-solder-through-hole-soldering ">Soldering
+                            Tutorial</a>
+                    </li>
+                    <li>
+                        <a href="https://learn.sparkfun.com/tutorials/esp8266-wifi-shield-hookup-guide?_ga=2.170306016.1344413419.1524463999-1934314947.1522828161">Hook-Up
+                            Guide</a>
+                    </li>
+                </ul>
+                <p>
+                    To connect the LCD screen:
+                </p>
+                <ul>
+                    <li>
+                        <a href="http://www.circuitbasics.com/how-to-set-up-an-lcd-display-on-an-arduino/">Tutorial</a>
+                    </li>
+                    <li>
+                        <p>Schematic:</p>
+                        <img src="Arduino-LCD-Schematic.png" alt="lcd_schematics">
+                    </li>
+                </ul>
+                <p>
+                    To connect the temperature and humidity sensor
+                </p>
+                <ul>
+                    <li>
+                        <a href="http://www.circuitbasics.com/how-to-set-up-the-dht11-humidity-sensor-on-an-arduino/
+                        ">Tutorial</a>
+                    </li>
+                    <li>
                         <p>Schematic:</p>
                         <img src="Arduino-Temp-Schematic.png" alt="temp_schematics">
-                </li>
-                <p>(Links last checked: April 24, 2018)</p>
-            </ul>
-            <h1>How to use the IOS App</h1>
-            <h2>Garden Tab</h2>
-            <p>
-                This tab is the default view when the application is launched. Refer to the picture below for this section. It shows the
-                title that is set for the plant currently in the garden centered at the top of the screen. Shown underneath
-                the title is the garden’s current temperature, humidity, and when the last time the garden was watered. At
-                the bottom of the screen, there is a button titled “Garden Details”. This button will take you to a screen
-                that displays how much water and electricity the garden has used that day.
-            </p>
-            <img src="screenshot1.png" alt="garden_tab">
-            <h2>Search Tab</h2>
-            <p>
-                This tab displays the garden’s database entries that are between the two dates in the text fields at the top of the screen.
-                Refer to the picture below for this section. When each text field is tapped, a date picker wheel appears.
-                Simply select the start date in the left text field, and the end date in the right text field. The application
-                will connect to the server and display all the garden’s database entries between the start and end date.
-                When you tap on an entry, you will be taken to the “Garden Details” screen, mentioned in the “Garden Tab”
-                section of this manual, except the data will be for that database entry.
-            </p>
-            <img src="screenshot2.png" alt="search_tab">
-            <h2>Settings Tab</h2>
-            <p>
-                This tab has three buttons on the screen: Select the data you want recorded, Set a water schedule, Create a water schedule.
-            </p>
-            <img src="screenshot3.png" alt="settings_tab">
-            <p>
-                The “Select the data you want recorded” button brings you to the screen shown below. Each entry in the table has a switch
-                on the right side to turn it on or off. When the switch is flipped to the right, with the green showing on
-                the left side of the switch, it is considered on. When the switch is on, that setting is being recorded to
-                the database from your garden daily. When the switch is off, that setting is not being recorded from your
-                garden.
-            </p>
-            <img src="screenshot4.png" alt="settings_2">
-            <p>
-                The “Set a water schedule” button brings you to the screen that is shown below. The water schedules you have created are
-                shown here in a table view. Each schedule has a switch on the right of the title of it. Only one schedule
-                may be active at a time so only one switch can be in the on position at a time. To switch to a different
-                schedule simply tap the switch of the schedule you want to set and it will turn on and switch to that schedule.
-                If you tap on one of the schedules it will bring you to the screen described in “Create a water schedule”.
-            </p>
-            <img src="screenshot5.png" alt="settings_3">
-            <p>
-                The “Create a water schedule” button brings you to the screen that is shown below. In this screen you set the name of the
-                schedule, starting time for watering, duration of watering, and how often you want the watering to repeat.
-                Tapping the “Save” button, upper right corner of the screen, will save the schedule and set it to your current
-                watering schedule then bring you back to the “Settings Tab” screen.
-            </p>
-            <img src="screenshot6.png" alt="settings_4">
+                    </li>
+                    <p>(Links last checked: April 24, 2018)</p>
+                </ul>
+            </div>
+            <div id="application_man">
+                <h1>How to use the IOS App</h1>
+                <h2>Garden Tab</h2>
+                <p>
+                    This tab is the default view when the application is launched. Refer to the picture below for this
+                    section. It shows the
+                    title that is set for the plant currently in the garden centered at the top of the screen. Shown
+                    underneath
+                    the title is the garden’s current temperature, humidity, and when the last time the garden was
+                    watered. At
+                    the bottom of the screen, there is a button titled “Garden Details”. This button will take you to a
+                    screen
+                    that displays how much water and electricity the garden has used that day.
+                </p>
+                <img src="screenshot1.png" alt="garden_tab">
+                <h2>Search Tab</h2>
+                <p>
+                    This tab displays the garden’s database entries that are between the two dates in the text fields
+                    at the top of the screen.
+                    Refer to the picture below for this section. When each text field is tapped, a date picker wheel
+                    appears.
+                    Simply select the start date in the left text field, and the end date in the right text field. The
+                    application
+                    will connect to the server and display all the garden’s database entries between the start and end
+                    date.
+                    When you tap on an entry, you will be taken to the “Garden Details” screen, mentioned in the
+                    “Garden Tab”
+                    section of this manual, except the data will be for that database entry.
+                </p>
+                <img src="screenshot2.png" alt="search_tab">
+                <h2>Settings Tab</h2>
+                <p>
+                    This tab has three buttons on the screen: Select the data you want recorded, Set a water schedule,
+                    Create a water schedule.
+                </p>
+                <img src="screenshot3.png" alt="settings_tab">
+                <p>
+                    The “Select the data you want recorded” button brings you to the screen shown below. Each entry in
+                    the table has a switch
+                    on the right side to turn it on or off. When the switch is flipped to the right, with the green
+                    showing on
+                    the left side of the switch, it is considered on. When the switch is on, that setting is being
+                    recorded to
+                    the database from your garden daily. When the switch is off, that setting is not being recorded
+                    from your
+                    garden.
+                </p>
+                <img src="screenshot4.png" alt="settings_2">
+                <p>
+                    The “Set a water schedule” button brings you to the screen that is shown below. The water schedules
+                    you have created are
+                    shown here in a table view. Each schedule has a switch on the right of the title of it. Only one
+                    schedule
+                    may be active at a time so only one switch can be in the on position at a time. To switch to a
+                    different
+                    schedule simply tap the switch of the schedule you want to set and it will turn on and switch to
+                    that schedule.
+                    If you tap on one of the schedules it will bring you to the screen described in “Create a water
+                    schedule”.
+                </p>
+                <img src="screenshot5.png" alt="settings_3">
+                <p>
+                    The “Create a water schedule” button brings you to the screen that is shown below. In this screen
+                    you set the name of the
+                    schedule, starting time for watering, duration of watering, and how often you want the watering to
+                    repeat.
+                    Tapping the “Save” button, upper right corner of the screen, will save the schedule and set it to
+                    your current
+                    watering schedule then bring you back to the “Settings Tab” screen.
+                </p>
+                <img src="screenshot6.png" alt="settings_4">
+            </div>
+
+            <div id="push_notifications">
+
+            </div>
+
+            <div id="website_man">
+                <h1>Using the Website</h1>
+            </div>
         </div>
 
     </div>
