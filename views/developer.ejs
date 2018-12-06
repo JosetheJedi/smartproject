@@ -14,7 +14,7 @@
     <div class="row">
 
         <div class="col-sm-8">
-            <div class="well">
+            <div class="well purple">
 
                 <!-- <span class="fa fa-lock"></span> -->
                 <span <p class="container-fluid">
@@ -296,7 +296,7 @@
         </div>
 
         <div class="col-sm-3">
-            <div class="well">
+            <div class="well  blue">
                 <ul>
                     <li>
                         <a href="#project_about">What is the project about?</a>
@@ -321,7 +321,7 @@
         </div>
 
         <div class="col-sm-3">
-            <div class="well">
+            <div class="well green">
                 <h2 class="text-center">
                     <b>Project Support</b>
                 </h2>
@@ -402,10 +402,11 @@
     </div>
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-            <div class="well">
+            <div class="well red">
                 <h1>Using the API</h1>
-                <div class="row-sm-4">
+                <div class="row-sm-4 api">
                     <h3>Authentication</h3>
+                    <hr>
                     <p>
                         To be able to use the API, you must make a call to this API end point:
                         https://resilientsmartgarden.com/api/authetication.
@@ -415,71 +416,91 @@
                         <br>
                         And you will get the following response if an existing username and password has been given.
                         <pre>{<br>  "success": true,<br>  "message": "Enjoy your Garden!",<br>  "token": "some_token"<br>}</pre>
-                        After getting the token everything else is pretty easy and straight forward. The token is refered to as <code>x-access-token</code> when making <b>GET</b> requests and <code>token</code> when making <b>POST</b> requests.
+                        After getting the token everything else is pretty easy and straight forward. The token is
+                        refered to as <code>x-access-token</code> when making <b>GET</b> requests and <code>token</code>
+                        when making <b>POST</b> requests.
                     </p>
                 </div>
-                <div class="row-sm-4">
+                <div class="row-sm-4 api">
                     <h3>Getting Gardens</h3>
+                    <hr>
                     <b>Endpoint: </b><em>https://www.resilientsmartgarden.com/api/gardens</em>
                     <p>
-                        To retrieve a users gardens through the API you just supply the <code>x-access-token</code> and the users <code>email</code> through headers of the <b>GET</b> request.
+                        To retrieve a users gardens through the API you just supply the <code>x-access-token</code> and
+                        the users <code>email</code> through headers of the <b>GET</b> request.
                         <pre>"headers":<br>{<br>   "x-access-token":<br>   "some_token",<br>   "email": "final@gmail.com"<br>}</pre>
                         You will get the gardens in JSON format as a response.
                     </p>
                 </div>
-                <div class="row-sm-4">
+                <div class="row-sm-4 api">
                     <h3>Creating Gardens</h3>
+                    <hr>
                     <b>Endpoint: </b><em>https://www.resilientsmartgarden.com/api/gardens</em>
                     <p>
-                        When creating a garden all you have to supply is the <code>garden</code> name and the <code>token</code> through the body of the <b>POST</b> request.
+                        When creating a garden all you have to supply is the <code>garden</code> name and the <code>token</code>
+                        through the body of the <b>POST</b> request.
                         <pre>{<br>  "token": "some_token",<br>  "garden": "API Garden"<br>}</pre>
                         It will then return a success message in JSON format.
                     </p>
                 </div>
 
-                <div class="row-sm-4">
+                <div class="row-sm-4 api">
                     <h3>Getting Plants</h3>
+                    <hr>
                     <b>Endpoint: </b><em>https://www.resilientsmartgarden.com/api/plants</em>
                     <p>
-                        Getting the plants in a garden is the same as getting the garden but you supply the <code>gardenid</code> of the garden 
-                        that you want to get the list of plants from followed by the <code>x-access-token</code> through the headers of the <b>GET</b> request.
+                        Getting the plants in a garden is the same as getting the garden but you supply the <code>gardenid</code>
+                        of the garden
+                        that you want to get the list of plants from followed by the <code>x-access-token</code>
+                        through the headers of the <b>GET</b> request.
                         <pre>"headers":<br>{<br>    "x-access-token": "some_token",<br>    "gardenid": "id#"<br>}</pre>
                         This will give you the list of plants in that given garden in JSON format.
                     </p>
                 </div>
 
-                <div class="row-sm-4">
+                <div class="row-sm-4 api">
                     <h3>Creating Plants</h3>
+                    <hr>
                     <b>Endpoint: </b><em>https://www.resilientsmartgarden.com/api/plants</em>
                     <p>
-                        When creating a plant, you will need to supply the <code>gardenid</code> of the garden that you want to create the plant in, and the <code>token</code> for the user, along with 
+                        When creating a plant, you will need to supply the <code>gardenid</code> of the garden that you
+                        want to create the plant in, and the <code>token</code> for the user, along with
                         the <code>plantName</code> through the body of the <b>POST</b> request.
                         <pre>{<br>  "token": "some_token",<br>  "gardenid": "id#",<br>  "plantName": "Lettuce"<br>}</pre>
                     </p>
                 </div>
 
-                <div class="row-sm-4">
+                <div class="row-sm-4 api">
                     <h3>Getting Logs</h3>
+                    <hr>
                     <b>Endpoint: </b><em>https://www.resilientsmartgarden.com/api/logs</em>
                     <p>
-                        When getting logs of the plant you supply the <code>gardenid</code> and <code>plantid</code> to get the logs along with the <code>x-access-token</code> through the headers of the <b>GET</b> request.
+                        When getting logs of the plant you supply the <code>gardenid</code> and <code>plantid</code> to
+                        get the logs along with the <code>x-access-token</code> through the headers of the <b>GET</b>
+                        request.
                         <pre>"headers":<br>{<br>    "x-access-token": "some_token",<br>    "gardenid": "id#",<br>    "plantid": "id#"<br>}</pre>
                     </p>
                 </div>
 
-                <div class="row-sm-4">
+                <div class="row-sm-4 api">
                     <h3>Creating Logs</h3>
+                    <hr>
                     <b>Endpoint: </b><em>https://www.resilientsmartgarden.com/api/logs</em>
                     <p>
-                        So here is the big one! When you want to create a log for a plant the Arduino would send this following information back to the server. <code>gardenid</code>, <code>plantid</code>, 
-                        <code>token</code>, <code>waterUsed</code> as a string, <code>moisture</code> as a integer or float, <code>humidity</code> as an integer or float, <code>temperature</code> as an integer or float, <code>date</code>, <code>time</code> 
-                        in UNIX milliseconds, and <code>offset</code> which is the UTC offset through the body of the <b>POST</b> request.
+                        So here is the big one! When you want to create a log for a plant the Arduino would send this
+                        following information back to the server. <code>gardenid</code>, <code>plantid</code>,
+                        <code>token</code>, <code>waterUsed</code> as a string, <code>moisture</code> as a integer or
+                        float, <code>humidity</code> as an integer or float, <code>temperature</code> as an integer or
+                        float, <code>date</code>, <code>time</code>
+                        in UNIX milliseconds, and <code>offset</code> which is the UTC offset through the body of the
+                        <b>POST</b> request.
                         <pre>{<br>  "gardenid": "id#",<br>  "plantid": "id#",<br>  "token": "some_token",<br>  "waterUsed": "1 gal",<br>  "moisture": 40,<br>  "humidity": 60,<br>  "temperature": 78,<br>  "dateCreated": {<br>      "date": "2018-12-15",<br>      "time": "1539725369736",<br>      "offset": 7<br>  }<br>}</pre>
                     </p>
                 </div>
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
