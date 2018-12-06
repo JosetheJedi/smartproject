@@ -1,17 +1,4 @@
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-}
-
-.title {
-    color: grey;
-    font-size: 18px;
-}
-
 button {
-    border: none;
     outline: 0;
     display: inline-block;
     padding: 8px;
@@ -19,16 +6,37 @@ button {
     background-color: #000;
     text-align: center;
     cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-
-a {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
 }
 
 button:hover, a:hover {
     opacity: 0.7;
+}
+
+.api {
+    margin: 50px 0px;
+}
+
+.red {
+    border-style: solid;
+    border-color: red;
+}
+
+.blue {
+    border-style: solid;
+    border-color: blue;
+}
+
+.green {
+    border-style: solid;
+    border-color: green;
+}
+
+.purple {
+    border-style: solid;
+    border-color: purple;
+}
+
+.navbar {
+    border-style: solid;
+    border-color: none;
 }
